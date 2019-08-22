@@ -9,3 +9,7 @@ https://trello.com/b/ScXSEp0V/projet-imr
 
 Estevan
 Christophe
+
+Le monstre du loch ness
+
+Lucien Barcon
