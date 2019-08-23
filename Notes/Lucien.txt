@@ -1,0 +1,38 @@
+Nom d'entreprise ? 
+
+Projet de bouée en mer
+
+Collecte de donnée --> But = collecté un grand nombre de données
+Modèles avec IA, but = prévoir impact sur faune donc besoin d'énormément de données.
+--> 50/75 bouées misent dans le golf pour ces 3 données --> 1 lecture par seconde par seconde par bouée
+
+Pas à s'occuper des radiofréquences et création bouées.
+
+S'occuper de la BDD, simulateur matériel ou logiciel ? Prévenir au plus tôt --> Arduino / Raspberry Py  --> Mock Up object par exemple 
+
+Interface : Moyenne sur divers plages horaires ( possibilité de les séléctionnées ) Précision en seconde --> Moyenne, médiane et écart type 
+Ces infos doivent rentrer dans une autre BDD. On veux une courbe sur l'année.
+Ex: Tout les jeudis 17h, rammasser la plage de 7 jour à mettre dans la BDD pour en faire une courbe pour chaque information. Plage à séléctionner.
+
+Automatisation des statistiques de la BDD.
+
+Interface = Choix libre mais sur ordinateur que ce soit natif ou pas
+
+On bati un jeu de données pour collecter le MAXIMUM de statistiques
+
+Pourcentage de données perdu inconnu pour le moment ? Mais précisions plus tard alors viser perfection pour le moment 
+
+Il faut voir les bouées sur une carte ( elles se déplacent ), elles sont toutes identifiées et les infos venant de bouées différentes doivent être bien distinctent
+qui possèdent des données géographique données au mètre près. Checker la position toute les minutes. De plus il faut annoncer si une bouée est déffectueuse ou non
+--> Tant qu'elle reste dans un rayon de 10 mètres bouée fiable sinon mettre la bouée à OFF. Toute les bouées peuvent être turn OFF automatiquement si les 
+conditions de sont plus respectées. Les statistiques non fiables doivent être identifiées en tant que tel
+
+Mettre un flag binaire ou peut être calcul en amont avec deux tables : DONNES FIABLES / DONNES NON FIABLES
+
+Traitement pendant la nuit car pas nécessaire de récolter les données récentes 
+
+Pas besoin de protéger ou de restreindre l'accès au données ( personne en dehors de l'enseigne ne peux y accéder quand même )
+
+Pas de modif de données = IMPOSSIBLE
+
+Données non fiable gardées quand même mais catégorisées pas de destruction de données.
