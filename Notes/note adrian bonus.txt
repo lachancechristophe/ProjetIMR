@@ -1,0 +1,1 @@
+Pour vérifier que les données soient bien transmises : somme de contrôle ? (ou autre système permettant de vérifier en partie que les données n'ont pas été altérées pendant la transmission ?
