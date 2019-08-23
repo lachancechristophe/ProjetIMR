@@ -1,0 +1,98 @@
+======================================== Rendez-vous avec le “client” – Projet de bases de données ========================================
+
+Directeur de l'institut scientifique de Rimouski, monsieur Éric Lavoie
+
+Notre entreprise est nommée à titre temporaire “entreprise équipe un”
+projet de bouée en mer.
+
+C'est quoi l'utilisation du logiciel ?
+  → accumuler les plus grandes plages de données possible,
+    → possibilité d'ajouter des infos aux trois déjà données :
+      → température de l'eau
+      → salinité
+      → débit des courants marins
+
+  Les changements climatiques amènent des changements sur les milieux marins.
+  Le but à long terme est de mettre en place une IA pour prédire ces variations.
+  Avec une seule bouée, on ne peut pas faire de modèle d'IA, 
+  il y a entre 50 et 75 bouées qui seront déployées.
+  La fréquence des prises de données est encore incertaine, allant de quatre prises par jour à 40 lectures à la seconde.
+  A-t-on besoin d'autant d'info ? Consensus, 50 à 75 bouées à une lecture par seconde par bouée.
+
+  L'IA à besoin de beaucoup de données pour dégager des patterns.
+  On veut developper ce jeu de donnée sur deux ans.
+
+  Les ingés civils s'occupent des radio-fréquences et de la conception des bouées.
+  On a le mandat de la preuve de concept avec un simulateur matériel ou logiciel.
+    → En cas de solution matérielle, il est nécessaire de passer commande le plus tôt possible
+    (trois semaines de délai pour livraison) en attendant la livraison, on peut marcher avec une machine virtuelle
+
+Interface, pour quoi faire ?
+  → on a besoin de la médiane, de la moyenne et de l'écrat type sur des plages de données sélectionnables a la seconde près.
+    on souhaite moyenne, médiane et écart type.
+    // cette info doit entrer dans une autre base de données.
+    // Tous les x temps on souhaite une telle info
+    // Une courbe doit pouvoir être faite sur l'année à partir de cette bd2
+    // On doit pouvoir choisir à quel intervalle (ts les jeudi à 17h par ex) enregistrer la plage de la dernière semaine, 
+    // sortir les trois données moyenne, médiane, ecart type, pour les stocker dans la bd 2 pour obtenir les courbes.
+    //  → forme d'automatisation de statistique sur base de données.
+    //  → on doit pouvoir régler l'intervalle de plusieurs heures à plusieurs jours. (toutes les six heures par ex.)
+    → ou alors, on stocke tout tel quel, et on calcule des données voulues selon la séléction au moment de la consultation
+
+Quel support ?
+  → Tout doit marcher sur ordi
+
+Application Native, pas native ?
+  → osef
+
+Recevoir des infos par courriel ?
+  → bonne idée mais ne fait pas partie du cahier des charges. Des stats par mails sont les bienvenues, PAS UN BESOIN.
+
+La bouée accumule-t-elle l'info pour l'envoyer par paquets ?
+  → On ne veut pas de perte d'information. Le but est une collection de données sur deux ans.
+    La consultation en temps réel n'est pas nécessaire, n'a pas de valeur biologique.
+
+Pas de perte ?
+  → Toute perte est à éviter au possible. On cherche le moins de perte possible.
+
+Pas de pourcentage de perte de donnée possible ?
+  → pas de réponse pour l'instant.
+
+Doit-on récolter l'origine des données, en garder une traçabilité ?
+  → Oui. Super important. De plus, la position des bouées doit pouvoir être monitorée.
+    Le but est de détecter les bouées défectueuses pour pouvoir aller les réparer.
+    On doit enregistrer la position de la bouée et l'identifiant de la bouée au moins une fois par minute pour associer cette info aux trois précitées:
+      → température de l'eau
+      → salinité
+      → débit des courants marins
+    Il faut une précision au mètre près.
+    Il faut une possibilité de flag pour séparer les données fiables des données non fiables automatiquement en cas de déplacement trop important des bouées.
+    La plage de donnée ne sera pas comptée dans les stats, mais restera enregistrée.
+    On peut augmenter la précision au point de récolter les coordonnées en même temps que les données. Une fois par seconde par bouée.
+    On peut coder le flag dans la BD au lieu de le recalculer dans ce cas. Pour gagner en performances (vitesse de calcul des stats par les ordinateurs).
+    Essayons de prévoir plus gros que plus petit.
+
+Y a-t-il besoin de garder un accès sécurisé ?
+  → Oui.
+
+A-t-on besoin de restreindre les droits d'accès à quelques personnes ? permettre des vues différentes ?
+  → osef. Les données ne sont pas des secrets d'état, la salinité de l'eau…
+    évitons toutefois que quiconque puisse jouer avec les données dont l'usage est réservé aux scientifiques.
+    on cherche un usage interne uniquement, mais global en interne.
+
+Discussion sur le fonctionnement organisationnel.
+Évocation des faits apportés pendant le cours.
+  → RDV chaque mercredi matin pour tester l'appli, discuter de ce qui va, ne va pas, des ajouts à faire, des modifs à apporter, etc.
+
+Doit-on permettre une modification des données.
+→ Les données ne doivent pas pouvoir être modifiées. On cherche un degré de confiance irréprochable.
+  Ne pas pouvoir modifier les données en aucune façon assure un gage de fiabilité important.
+
+L'esthétique présente-t-il une importance ?
+  → non. On veut des stats.
+
+Gère-t-on des problèmes d'accessibilité ? Problème de vision des couleurs ?
+  → non
+
+Doit-on permettre une suppression de données ?
+  → Non, en aucune façon. Même pour les données inexploitables.
