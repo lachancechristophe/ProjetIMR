@@ -1,0 +1,28 @@
+
+GENERALE :
+	-accumulé le plus de donnees possible -> salinite,temperature,debit,coordonnees(au metre pres)
+	-entre 50 et 75 bouées
+	-logiciel fait dans le but de faire une intelligence artificielle
+	-1 lecture par seconde par bouee
+	-faire une preuve de concept
+	-simulateur de donnees logiciel ou materiel
+	-detection deplacement et desactivation auto de bouee
+	-envoie de mail
+	-perdre le moins de donnees possible -> pourcentage de perte de donnees a voir
+
+
+INTERFACE :
+	- afficher mediane,moyenne,ecart-type, coordonnes -> courbes, graphique, carte 
+	- selection plage de donnees
+	- pas de preference pour le design
+	- systeme de log
+
+
+BASE DE DONNE:
+	-mettre tout dans la mm base trier ensuite (table buffer)
+	-bloquer la modif et suppression de donnees de donnees bdd
+	-pas melanger donnees des bouees
+
+
+
+	
