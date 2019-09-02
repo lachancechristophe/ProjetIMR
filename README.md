@@ -5,7 +5,10 @@ Espace d'équipe - Projet Bases de données - CÉGEP de Matane
 
 https://trello.com/b/ScXSEp0V/projet-imr
 
-# Nom Equipe :
+# Nom d'équipe :
+Heptagone Média
+
+----
 
 Estevan
 Christophe
